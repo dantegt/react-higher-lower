@@ -5,13 +5,10 @@ import { useGameData } from "./GameProvider";
 
 export default function Guesses() {
     const { guesses } = useGameData()
-    const createArray = length => [...Array(length)]
-    
-    
     return (
         <>
         <div className="guesses">
-        {createArray(guesses).map((n, i) => (
+        {[...Array(guesses)].map((n, i) => (
             <GiCardRandom
             key={i.toString()}
             className="guess"
