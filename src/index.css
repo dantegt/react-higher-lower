@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +9,125 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("/public/poker.png");
+  color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.game {
+  max-width: 500px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 1rem;
+}
+
+.card-wrapper {
+  width: 230px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: -1px 2px 3px #444444ab;
+  border-radius: 28px;
+}
+
+.card-wrapper.next {
+  transform: rotate(5deg) translate3d(-92px, 6px, 40px);
+  /* display: none; */
+  position: absolute;
+  top: 0;
+  right: -140px;
+}
+
+.card-wrapper .card-icon {
+  margin: -14px -48px;
+}
+
+.current-card .picture {
+  display: block;
+  display: none;
+  height: 50vh;
+  width: calc(50vh / 1.6);
+  padding: 1rem 2rem;
+  margin: 1rem auto;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  box-shadow: 2px 3px 5px #d6d6d6;
+  text-align: left;
+}
+
+.current-card .picture .value,
+.current-card .picture .suit {
+  font-size: 3rem;
+}
+
+.card-icon {
+  font-size: 20rem;
+}
+
+.guess {
+  font-size: 3rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.actions .turn {
+  margin: 0 0 1rem;
+}
+
+.actions .buttons {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+}
+
+.actions .deckCount {
+  margin-top: 0;
+}
+
+.actions .guide {
+  margin-bottom: 0.5rem;
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.actions button {
+  padding: 0.2rem 1rem;
+  cursor: pointer;
+}
+
+.notification {
+  font-size: 1.4rem;
+  padding: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.8rem;
+  border: 5px dotted white;
+  margin-bottom: 1rem;
+}
+
+.play-button-icon {
+  color: greenyellow;
+}
+
+.rules {
+  padding-top: 2rem;
+}
+
+.rules-dialog {
+  position: absolute;
+  left: 0;
+  bottom: 50vh;
 }
